@@ -17,6 +17,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
+import { TooltipProvider } from '@/components/ui/tooltip'
 import {
   Sidebar,
   SidebarContent,
@@ -187,6 +188,7 @@ export function App() {
   const [side, setSide] = useState('left')
 
   return (
+    <TooltipProvider>
     <SidebarProvider key={`${side}-${variant}-${collapsible}`}>
       <AppSidebar variant={variant} collapsible={collapsible} side={side} />
 
@@ -252,5 +254,6 @@ export function App() {
         </main>
       </SidebarInset>
     </SidebarProvider>
+    </TooltipProvider>
   )
 }
